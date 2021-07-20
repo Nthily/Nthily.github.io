@@ -13,7 +13,7 @@ jobs:
     - name: Build and Deploy
       uses: renzhaosy/hexo-deploy-action@master
       env:
-        PERSONAL_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        PERSONAL_TOKEN: ${{ secrets.GH_TOKEN }}
         PUBLISH_REPOSITORY: Nthily/MyBlog
         BRANCH: master
         PUBLISH_DIR: ./public
