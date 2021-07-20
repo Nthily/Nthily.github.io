@@ -1,19 +1,45 @@
-name: Build and Deploy
+name: Deploy Hexo
+
 on:
-  push:	
-    branches:	
+  push:
+    branches:
       - master
+
 jobs:
-  build-and-deploy:
+  build:
     runs-on: ubuntu-latest
     steps:
     - name: Checkout
-      uses: actions/checkout@master
+      uses: actions/checkout@v1
 
-    - name: Build and Deploy
-      uses: renzhaosy/hexo-deploy-action@master
-      env:
-        PERSONAL_TOKEN: ${{ secrets.GH_TOKEN }}
-        PUBLISH_REPOSITORY: Nthily/MyBlog
-        BRANCH: master
-        PUBLISH_DIR: ./public
+    - name: Setup Node.js environment
+      uses: actions/setup-node@v2-beta
+      with:
+        node-version: '12'
+
+    - name: Install pandoc (Latex support)
+      run: |
+        wget -O pandoc.deb https://github.com/jgm/pandoc/releases/download/2.11.1/pandoc-2.11.1-1-amd64.deb
+        sudo dpkg -i pandoc.deb
+    - name: Set git environment
+      env: 
+        # 1. Add this private key and title as DEPLOY_KEY in this repo -> settings/secrets
+        # 2. Add corresponding public key and named as any text to the github page repo -> settings/deploy keys
+        DEPLOY_KEY: ${{ secrets.GH_TOKEN }}
+        USERNAME: Nthily
+        EMAIL: nthily@outlook.com
+      run: |
+        mkdir -p ~/.ssh/
+        echo "$DEPLOY_KEY" > ~/.ssh/id_rsa
+        chmod 600 ~/.ssh/id_rsa
+        ssh-keyscan github.com >> ~/.ssh/known_hosts
+        git config --global user.name "Nthily"
+        git config --global user.email "nthily@outlook.com"
+    - name: Setup Hexo environment
+      run: |
+        npm install -g hexo-cli
+        npm install
+    - name: Deploy Hexo
+      run: |
+        hexo g
+        hexo d
