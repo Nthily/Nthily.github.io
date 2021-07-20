@@ -1,9 +1,11 @@
-name: Pages
+name: Deploy blog to GitHub Pages
 
 on:
   push:
     branches:
       -master  # default branch
+    paths:
+      - '/**'
 
 jobs:
   pages:
