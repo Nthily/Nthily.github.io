@@ -35,5 +35,5 @@ jobs:
         with:
           token: ${{ secrets.GH_TOKEN }}
           branch: gh-pages
-          folder: /publish
+          folder: ././publish
           repository-name: Nthily/MyBlog
