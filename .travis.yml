@@ -1,10 +1,11 @@
 sudo: false
 language: node_js
 node_js:
-  - 10 # use nodejs v10 LTS
+  - 14
 cache: npm
 install:
-  - yarn
+  - npm install
+  - yarn install
 branches:
     only:
     - master # build master branch only
