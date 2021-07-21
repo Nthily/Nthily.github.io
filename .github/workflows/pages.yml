@@ -1,39 +1,33 @@
-name: Deploy blog to GitHub Pages
+name: Pages
 
 on:
   push:
     branches:
-      - master
+      - source  # default branch
 
 jobs:
-  build-and-deploy:
+  pages:
     runs-on: ubuntu-latest
     steps:
-
-      - name: Checkout
-        uses: actions/checkout@v2
-        
-      - name: Setup node.js
-        uses: actions/setup-node@v2
+      - uses: actions/checkout@v2
+      - name: Use Node.js 12.x
+        uses: actions/setup-node@v1
         with:
-          node-version: '14'
-
-      - name: Setup yarn
-        run: npm install -g yarn
-
-      - name: Install packages
-        run: yarn --cwd "./"
-
-      - name: Clean for blog
-        run: yarn --cwd "./" clean
-
-      - name: Build for blog
-        run: yarn --cwd "./" build
-
+          node-version: '12.x'
+      - name: Cache NPM dependencies
+        uses: actions/cache@v2
+        with:
+          path: node_modules
+          key: ${{ runner.OS }}-npm-cache
+          restore-keys: |
+            ${{ runner.OS }}-npm-cache
+      - name: Install Dependencies
+        run: npm install
+      - name: Build
+        run: npm run build
       - name: Deploy
-        uses: JamesIves/github-pages-deploy-action@4.1.1
+        uses: peaceiris/actions-gh-pages@v3
         with:
-          token: ${{ secrets.GH_TOKEN }}
-          branch: gh-pages
-          folder: publish
-          repository-name: Nthily/MyBlog
+          github_token: ${{ secrets.GH_TOKEN }}
+          publish_dir: ./public
+          publish_branch: gh-pages  # deploying branch
