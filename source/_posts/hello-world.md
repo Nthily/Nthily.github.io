@@ -1,38 +1,17 @@
 ---
-title: Hello World
+title: 记一次三阶单次 PB 的解法复盘
 ---
-Welcome to [Hexo](https://hexo.io/)! This is your very first post. Check [documentation](https://hexo.io/docs/) for more info. If you get any problems when using Hexo, you can find the answer in [troubleshooting](https://hexo.io/docs/troubleshooting.html) or you can ask me on [GitHub](https://github.com/hexojs/hexo/issues).
 
-## Quick Start
+打乱：D2 F2 D2 L R2 B2 L B2 F2 R' U' F2 R' D F R2 U' R B
 
-### Create a new post
+X2 // inspection 白底蓝前
+U' F2 u R y' U R' F R D // 十字
+R U' R' y' U' L' U L  //1st pair
+U' R U R' U' y R' U' R //2nd pair
+U' F U' F' //3rd pair
+(U R U' R') x 3 //4th pair
 
-``` bash
-$ hexo new "My New Post"
-```
+U' r U R' U' M U R U' R' // OLL
 
-More info: [Writing](https://hexo.io/docs/writing.html)
-
-### Run server
-
-``` bash
-$ hexo server
-```
-
-More info: [Server](https://hexo.io/docs/server.html)
-
-### Generate static files
-
-``` bash
-$ hexo generate
-```
-
-More info: [Generating](https://hexo.io/docs/generating.html)
-
-### Deploy to remote sites
-
-``` bash
-$ hexo deploy
-```
-
-More info: [Deployment](https://hexo.io/docs/one-command-deployment.html)
+ETM:54
+ETPS:7.51
