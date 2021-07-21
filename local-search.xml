@@ -4,9 +4,22 @@
   
   
   <entry>
+    <title></title>
+    <link href="/2021/07/21/flag/"/>
+    <url>/2021/07/21/flag/</url>
+    
+    <content type="html"><![CDATA[<p>Flag.png</p><p><img src="https://raw.githubusercontent.com/Nthily/nthily.github.io/master/source/img/flag/flag.png"></p>]]></content>
+    
+    
+    
+  </entry>
+  
+  
+  
+  <entry>
     <title>记一次三阶单次 PB 的解法复盘</title>
-    <link href="/2021/07/21/hello-world/"/>
-    <url>/2021/07/21/hello-world/</url>
+    <link href="/2021/07/21/%E9%AD%94%E6%96%B9/"/>
+    <url>/2021/07/21/%E9%AD%94%E6%96%B9/</url>
     
     <content type="html"><![CDATA[<p>打乱：D2 F2 D2 L R2 B2 L B2 F2 R’ U’ F2 R’ D F R2 U’ R B</p><p>X2 // inspection 白底蓝前<br>U’ F2 u R y’ U R’ F R D // 十字<br>R U’ R’ y’ U’ L’ U L  //1st pair<br>U’ R U R’ U’ y R’ U’ R //2nd pair<br>U’ F U’ F’ //3rd pair<br>(U R U’ R’) x 3 //4th pair</p><p>U’ r U R’ U’ M U R U’ R’ // OLL</p><p>ETM:54<br>ETPS:7.51</p>]]></content>
     
