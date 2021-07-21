@@ -20,6 +20,10 @@ layout: about
 * 比较喜欢听 Kawaii Bass、Future Bass、Future House、Chill Music、D&B、J-Pop、J-Rock、轻音乐
 * 喜欢的歌手/曲师/乐队/：Aimer / YOASOBI / Ayase/  礼谙 / ARForest / MYFIRSTSTORY / RADWIMPS
 
+<iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width=500 height=86 src="//music.163.com/outchain/player?type=2&id=1294568001&auto=1&height=66"></iframe>
+
+<iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width=500 height=86 src="//music.163.com/outchain/player?type=2&id=420513452&auto=1&height=66"></iframe>
+
 ## 编程技能：
 
 * 没有特别精通的，还没有想好要学什么但是又都想学（除了 Web），最近在学安卓前端框架 [Jetpack Compose](https://developer.android.com/jetpack/compose?gclid=Cj0KCQjw6NmHBhD2ARIsAI3hrM3Rsy73NpMfPZy0gJLMAHAzGl3f6LIBNfE-We4k2HKeEPfIjHRjqvcaAhLoEALw_wcB&gclsrc=aw.ds)，
