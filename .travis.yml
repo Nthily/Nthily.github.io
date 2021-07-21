@@ -8,7 +8,7 @@ install:
   yarn install
 branches:
   only:
-    - master # build master branch only
+    - master # build master branch onl
 script:
   - hexo generate # generate static files
 deploy:
